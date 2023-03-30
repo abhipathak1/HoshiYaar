@@ -1,0 +1,379 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: montserrat, sans-serif;
+}
+
+#nav1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(238, 238, 238);
+    height: 25px;
+    position: sticky;
+    top: 0;
+}
+
+#nav1 div a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, .8);
+    margin-left: 15px;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+/* second nav bar */
+#nav2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#nav2 div {
+    display: flex;
+    align-items: center;
+
+}
+
+#nav2 :first-child img {
+    width: 40%;
+}
+
+#nav2 div a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+#nav2 div img {
+    width: 23px;
+}
+
+#nav2 :nth-last-child(1) {
+    margin-left: 10px;
+}
+
+#nav2 div button {
+    background: none;
+    border: none;
+}
+
+#search {
+    width: 250px;
+    height: 40px;
+    background-color: rgb(234, 234, 234);
+    border-radius: 5px;
+    border: none;
+
+}
+
+
+
+/* first menu */
+
+#first {
+    display: flex;
+    gap: 13px;
+    margin-top: 5px;
+    margin-left: 13px;
+    margin-bottom: 20px;
+}
+
+/* second */
+
+
+#second img {
+    width: 100%;
+}
+
+/* third */
+
+#third {
+    width: 80%;
+    display: flex;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#third div img {
+    width: 80%;
+}
+
+#third p {
+    font-weight: bold;
+    font-family: montserrat, sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* fourth */
+
+#fourth {
+    width: 100%;
+    display: flex;
+
+}
+
+#fourth img:nth-child(1) {
+    width: 50%;
+}
+
+#fourth img:nth-child(2) {
+    width: 50%;
+}
+
+#FourH3 {
+    font-family: montserrat, sans-serif;
+    letter-spacing: 2px;
+    text-align: center;
+    font-size: x-large;
+}
+
+/* fifth */
+
+#fifth {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+#fifth img {
+    width: 100%;
+}
+
+#FifthH3 {
+    font-family: montserrat, sans-serif;
+    letter-spacing: 2.5px;
+    text-align: center;
+    font-size: x-large;
+}
+
+/* sixth */
+
+#sixth1 {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+
+}
+
+#sixth1 img:nth-child(1) {
+    width: 50%;
+}
+
+#sixth1 img:nth-child(2) {
+    width: 50%;
+}
+
+#sixth2 {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+
+}
+
+#sixth2 img:nth-child(1) {
+    width: 50%;
+}
+
+#sixth2 img:nth-child(2) {
+    width: 50%;
+}
+
+#sixh3 {
+    font-family: montserrat, sans-serif;
+    letter-spacing: 2.5px;
+    text-align: center;
+    font-size: x-large;
+}
+
+/* seventh */
+
+#sevenH3 {
+    font-family: montserrat, sans-serif;
+    letter-spacing: 2.5px;
+    text-align: center;
+    font-size: x-large;
+}
+
+#seventh {
+    display: flex;
+}
+
+#seventh img {
+    width: 100%;
+}
+
+/* eight */
+
+/* ninth */
+
+#ninth {
+    display: flex;
+}
+
+#ninth img {
+    width: 100%;
+}
+
+/* tenth */
+#tenth1 {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+
+}
+
+#tenth1 img:nth-child(1) {
+    width: 50%;
+}
+
+#tenth1 img:nth-child(2) {
+    width: 50%;
+}
+
+#tenth2 {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+}
+
+#tenth2 img:nth-child(1) {
+    width: 50%;
+}
+
+#tenth2 img:nth-child(2) {
+    width: 50%;
+}
+
+#eleventh img {
+    width: 100%;
+}
+
+#twelfth img {
+    width: 100%;
+}
+
+#twelfth {
+    margin-top: 15px;
+}
+
+
+/* dropdown  Menu */
+
+#content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 70px;
+}
+
+#content p {
+    font-size: 17px;
+    text-transform: uppercase;
+    letter-spacing: .07px;
+    color: #0e0e0e;
+    line-height: 13px;
+}
+
+#content div {
+    position: relative;
+    cursor: pointer;
+}
+
+#content div div {
+    padding-left: 20px;
+}
+
+.DDscrool {
+    display: flex;
+    overflow: scroll;
+    max-height: 500px;
+}
+
+/* Customize the scrollbar for the DDscrool container */
+.DDscrool::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Customize the scrollbar track */
+.DDscrool::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}
+
+/* Customize the scrollbar thumb */
+.DDscrool::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+/* Customize the scrollbar thumb on hover */
+.DDscrool::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+#content div a {
+    display: block;
+    text-decoration: none;
+    padding-bottom: 10px;
+    color: grey;
+}
+
+#content div section {
+    background-color: whitesmoke;
+    padding: 15px;
+    position: absolute;
+    width: max-content;
+    min-width: 100%;
+    display: none;
+    z-index: 10;
+    margin-top: 50px;
+}
+
+#content div:hover section {
+    display: block;
+}
+
+#content div:hover section {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* back-to-top button */
+
+#back-to-topbtn img {
+    width: 30px;
+}
+
+#back-to-topbtn {
+    position: fixed;
+    bottom: 5%;
+    width: 75px;
+    right: 0;
+    z-index: 99;
+    font-size: 18px;
+    border-radius: 70%;
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 10px black;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    padding: 15px;
+    transition: background-color 0.3s ease-out;
+}
+
+#back-to-topbtn:hover {
+    background-color: #eee;
+}
