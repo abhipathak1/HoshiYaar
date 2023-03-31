@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoginPage</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: montserrat, sans-serif;
+        }
+
+        .MainNav {
+            position: sticky;
+            top: 0;
+        }
+
+        /* firstNav Bar */
+
+        #nav1 {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background-color: rgb(238, 238, 238);
+            height: 25px;
+        }
+
+        #nav1 div a {
+            text-decoration: none;
+            color: rgba(0, 0, 0, .8);
+            margin-left: 15px;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        /* second nav bar */
+        #nav2 {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            background-color: rgb(255, 255, 255);
+        }
+
+        #nav2 div {
+            display: flex;
+            align-items: center;
+
+
+        }
+
+        #nav2 :first-child img {
+            width: 40%;
+        }
+
+        #nav2 div a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        #nav2 div img {
+            width: 23px;
+        }
+
+        #nav2 :nth-last-child(1) {
+            margin-left: 10px;
+        }
+
+        #nav2 div button {
+            background: none;
+            border: none;
+        }
+
+        #search {
+            width: 250px;
+            height: 40px;
+            background-color: rgb(234, 234, 234);
+            border-radius: 5px;
+            border: none;
+
+        }
+
+        /* login */
+
+        .MainLOG {
+            display: flex;
+            /* gap: 50px; */
+            width: 100%;
+            height: 750px;
+        }
+
+        /* right side content */
+
+        .Left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 50%;
+            background: linear-gradient(to bottom, rgb(255, 254, 246), #fff4c5);
+        }
+
+        .Left div img {
+            width: 100%;
+            margin-top: 20px;
+            margin: auto;
+        }
+
+        .Left h2 {
+            font-size: xx-large;
+            margin-bottom: 90px;
+            text-align: center;
+        }
+
+        .Right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+        }
+
+        .Right p {
+            color: grey;
+        }
+
+        .Right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            padding: 50px;
+        }
+
+        .Right h2 {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .Right p {
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        .Right input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .Right button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+        }
+
+
+        .Right h4 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .Right button:nth-of-type(1) {
+            background-color: white;
+            color: black;
+            border: 2px solid #ccc;
+            margin-right: 10px;
+        }
+
+        .Right button:nth-of-type(1):hover {
+            background-color: #ccc;
+        }
+
+        .Right button:nth-of-type(2) {
+            background-color: rgb(72, 103, 170);
+        }
+
+        .Right button:nth-of-type(2):hover {
+            background-color: rgb(27, 85, 210);
+        }
+
+        #con {
+            background-color: rgb(66, 162, 162);
+            color: white;
+        }
+
+        #con:hover {
+            background-color: rgb(32, 112, 112);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="MainNav">
+
+        <div id="nav1">
+            <div>
+                <a href="">Offer</a>
+                <a href="">Fanbook</a>
+                <a href="">📲Download App</a>
+                <a href="">TriBe Membership</a>
+            </div>
+            <div>
+                <a href="">Contact Us</a>
+                <a href="">Track order</a>
+            </div>
+        </div>
+
+        <!-- second nav bar -->
+
+        <div id="nav2">
+            <div>
+                <img src="https://images.bewakoof.com/web/ic-desktop-bwkf-trademark-logo.svg" alt="">
+
+                <a href="">MEN</a>
+                <a href="">WOMEN</a>
+                <a href="">MOBILE COVER</a>
+            </div>
+            <div>
+                <input type="search" id="search" placeholder="🔍 Search by product, category or collection">
+                &nbsp&nbsp<p> |</p>
+                <div>
+                    <img src="https://cdn-icons-png.flaticon.com/128/1077/1077035.png" alt="">
+                </div>
+                <div>
+                    <img src="https://cdn-icons-png.flaticon.com/128/694/694575.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- lower part -->
+
+    <div class="MainLOG">
+        <div class="Left">
+            <h2>Welcome to the world of Bewakoof®!</h2>
+            <div>
+                <img src="https://images.bewakoof.com/web/group-19-1617704502.png" alt="">
+            </div>
+        </div>
+
+
+        <div class="Right">
+            <h2>Log in / Sign up</h2>
+            <p>for Latest trends, exciting offers and everything Bewakoof®!</p>
+
+            <div>
+                <input type="Number" placeholder="Enter Mobile Number"><br>
+                <button id="con">Continue</button>
+            </div>
+
+            <h4>OR</h4>
+
+
+            <div>
+                <button>✉️ CONTINUE WITH EMAIL</button> <br>
+                <div style="display: flex;">
+                    <button>GOOGLE</button>
+                    <button>FACEBOOK</button>
+                </div>
+            </div>
+
+            <p>By creating an account or logging in, you agree with <br> Bewakoof®'s <span
+                    style="color: rgb(66, 162, 162);">Terms and Conditions</span> and <span
+                    style="color: rgb(66, 162, 162);">Privacy Policy</span></p>
+        </div>
+    </div>
+</body>
+
+</html>
