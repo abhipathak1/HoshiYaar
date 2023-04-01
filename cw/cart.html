@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        /* overflow-x: hidden; */
+        font-family: montserrat, sans-serif;
+    }
+
+    .MainNav {
+        position: sticky;
+        top: 0;
+    }
+
+    /* firstNav Bar */
+
+    #nav1 {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background-color: rgb(238, 238, 238);
+        height: 25px;
+    }
+
+    #nav1 div a {
+        text-decoration: none;
+        color: rgba(0, 0, 0, .8);
+        margin-left: 15px;
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    /* second nav bar */
+    #nav2 {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: rgb(255, 255, 255);
+    }
+
+    #nav2 div {
+        display: flex;
+        align-items: center;
+
+
+    }
+
+    #nav2 :first-child img {
+        width: 40%;
+    }
+
+    #nav2 div a {
+        text-decoration: none;
+        color: black;
+        margin-left: 40px;
+        letter-spacing: 1px;
+    }
+
+    #nav2 div img {
+        width: 23px;
+    }
+
+    #nav2 :nth-last-child(1) {
+        margin-left: 10px;
+    }
+
+    #nav2 div button {
+        background: none;
+        border: none;
+    }
+
+    #search {
+        width: 250px;
+        height: 40px;
+        background-color: rgb(234, 234, 234);
+        border-radius: 5px;
+        border: none;
+    }
+
+
+    /* cartPart */
+    #Append {
+        width: 50%;
+    }
+
+    #Append .product-details {
+        display: flex;
+        gap: 5px;
+        justify-content: space-around;
+    }
+
+    .img-card {
+        width: 250px;
+
+    }
+
+    .img-card img {
+        width: 100%;
+
+    }
+
+    .proceed-button {
+        width: 100px;
+        background-color: rgb(1, 23, 16);
+        color: white;
+        border-radius: 5px;
+        border: none;
+        height: 30px;
+    }
+
+    .RRR {
+        border: 1px solid #ccc;
+        padding: 20px;
+        font-size: 16px;
+        font-weight: 500;
+        height: max-content;
+
+    }
+
+    .RRR>div {
+        margin-bottom: 20px;
+    }
+
+    .RRR>div:last-child {
+        margin-bottom: 0;
+    }
+
+    .RRR p {
+        margin: 0;
+    }
+
+    .RRR button {
+        padding: 10px 20px;
+        background-color: #5b97f7;
+        color: #fff;
+        border: none;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .RRR button:hover {
+        background-color: #4286f4;
+    }
+
+    .RRR img {
+        height: 25px;
+        margin-right: 10px;
+    }
+
+    .RRR .RightSide {
+        flex: 1;
+    }
+
+    .RRR .PriceSummary {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .RRR .PriceSummary p {
+        font-weight: 500;
+    }
+</style>
+
+<body>
+
+    <div class="MainNav">
+
+        <div id="nav1">
+            <div>
+                <a href="">Offer</a>
+                <a href="">Fanbook</a>
+                <a href="">📲Download App</a>
+                <a href="">TriBe Membership</a>
+            </div>
+            <div>
+                <a href="">Contact Us</a>
+                <a href="">Track order</a>
+            </div>
+        </div>
+
+        <!-- second nav bar -->
+
+        <div id="nav2">
+            <div>
+                <img id="Logo" src="https://images.bewakoof.com/web/ic-desktop-bwkf-trademark-logo.svg" alt="">
+
+                <a href="">MEN</a>
+                <a href="">WOMEN</a>
+
+            </div>
+            <div>
+                <input type="search" id="search" placeholder="🔍 Search by product, category or collection">
+                &nbsp&nbsp<p id="searchBtn">🔍</p>
+                <div>
+                    <img src="https://cdn-icons-png.flaticon.com/128/1077/1077035.png" alt="">
+                </div>
+                <div>
+                    <img src="https://cdn-icons-png.flaticon.com/128/694/694575.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div style="width: 100%; display: flex;">
+        <div id="Append">
+            <!-- Append Here -->
+        </div>
+        <div class="RRR">
+            <div style="background-color: rgb(229, 229, 13); height: 30px; padding: 5px;">
+                <p style="color: black;">Save extra $80 with TriBe</p>
+            </div>
+            <div style="padding: 10px; border-radius: 5px; box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;">
+                <p>Get Rs.200 instant discount on your First Purchase above <br> Rs.999. Coupon code -NEW200</p>
+            </div>
+            <div style="box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; padding: 10px;">
+                <p>Whistles! Get extra 20% Cashback on prepaid orders above Rs.499. Coupon code - NEW20. Applicable for
+                    new customers only!</p>
+            </div>
+            <div class="PriceSummary">
+                <div>
+                    <p>PRICE SUMMARY</p>
+                </div>
+
+                <div>
+                    <p style="font-family: montserrat,sans-serif;">Shipping Charges -: <span
+                            style="color: rgb(15, 93, 15);font-weight: bold;">Free</span> </p>
+                </div>
+            </div>
+            <div>
+                <div style="display: flex;">
+                    <div class="RightSide">
+                        <!-- AppendHere -->
+                    </div>
+                    <div>
+                        <button>CHECKOUT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+    let app = document.getElementById("Append");
+    let data = JSON.parse(localStorage.getItem("cart")) || [];
+
+    function DisplayData() {
+        app.innerHTML = "";
+        let totalPrice = 0;
+
+        for (let i = 0; i < data.length; i++) {
+            let imgCard = document.createElement("div");
+            imgCard.className = "img-card";
+
+            let div = document.createElement("div");
+            div.className = "product-details";
+
+            let newDiv = document.createElement("div");
+            newDiv.className = "price-rating";
+
+            let name = document.createElement("h4");
+            name.className = "product-name";
+
+            let price = document.createElement("p");
+            price.className = "product-price";
+
+            let image = document.createElement("img");
+            image.className = "product-image";
+
+            let btn = document.createElement("button");
+            btn.className = "proceed-button";
+
+            let rating = document.createElement("h5");
+            rating.className = "product-rating";
+
+            let incre = document.createElement("button");
+            let quant = document.createElement("p");
+            let decre = document.createElement("button");
+            let remove = document.createElement("button");
+
+            incre.innerText = "+";
+            decre.innerText = "-";
+            quant.innerText = data[i].quantity || 1;
+            remove.innerText = "REMOVE";
+
+            image.src = data[i].image;
+            name.textContent = data[i].title;
+            price.textContent = "Price:- ₹ " + data[i].price;
+            rating.textContent = "Rating:- " + data[i].rating + " ⭐";
+            btn.innerText = "Proceed";
+
+            incre.addEventListener("click", () => {
+                data[i].quantity = data[i].quantity ? data[i].quantity + 1 : 1;
+                localStorage.setItem("cart", JSON.stringify(data));
+                DisplayData();
+            });
+
+            decre.addEventListener("click", () => {
+                data[i].quantity = data[i].quantity && data[i].quantity > 0 ? data[i].quantity - 1 : 0;
+                localStorage.setItem("cart", JSON.stringify(data));
+                DisplayData();
+            });
+
+            remove.addEventListener("click", () => {
+                data.splice(i, 1);
+                localStorage.setItem("cart", JSON.stringify(data));
+                DisplayData();
+            });
+
+            imgCard.append(image);
+            newDiv.append(name, rating, price, decre, quant, incre, remove);
+            div.append(imgCard, newDiv);
+            app.append(div);
+
+            totalPrice += parseFloat(data[i].price) * (data[i].quantity || 1);
+        }
+
+        let totalDiv = document.createElement("div");
+        totalDiv.className = "total-price";
+        totalDiv.textContent = "Total price: ₹ " + totalPrice.toFixed(2);
+
+        let rightSideDiv = document.querySelector(".RightSide");
+        rightSideDiv.innerHTML = "";
+        rightSideDiv.append(totalDiv);
+    }
+
+    DisplayData();
+
+
+
+    let Logo = document.getElementById("Logo")
+    Logo.onclick = () => {
+        localStorage.removeItem("logged")
+        window.location.reload()
+        location = "index.html"
+    }
+
+
+
+</script>

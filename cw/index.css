@@ -1,0 +1,474 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: montserrat, sans-serif;
+}
+
+.MainNav {
+    position: sticky;
+    top: 0;
+}
+
+/* firstNav Bar */
+
+#nav1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(238, 238, 238);
+    height: 25px;
+}
+
+#nav1 div a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, .8);
+    margin-left: 15px;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+/* second nav bar */
+#nav2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgb(255, 255, 255);
+}
+
+#nav2 div {
+    display: flex;
+    align-items: center;
+}
+
+#nav2 :first-child img {
+    width: 40%;
+}
+
+#nav2 div a {
+    text-decoration: none;
+    color: black;
+    margin-left: 40px;
+    letter-spacing: 1px;
+}
+
+
+#nav2 div img {
+    width: 23px;
+}
+
+#nav2 :nth-last-child(1) {
+    margin-left: 10px;
+}
+
+#nav2 div button {
+    background: none;
+    border: none;
+}
+
+#search {
+    width: 250px;
+    height: 40px;
+    background-color: rgb(234, 234, 234);
+    border-radius: 5px;
+    border: none;
+}
+
+#logbtn {
+    cursor: pointer;
+}
+
+/* dropdown  Menu */
+/* nav 3 */
+
+.Nav3P {
+    text-decoration: none; /* Removes the default underline */
+    position: relative;
+  }
+  
+  .Nav3P::after {
+    content: "";
+    display: block;
+    height: 5px;
+    width: 0;
+    background-color: #fdd835;
+    position: absolute;
+    bottom: -16.6px;
+    left: 50%;
+    transition: width 0.2s ease-out;
+  }
+  
+  .Nav3P:hover::after {
+    width: 100%;
+    left: 0;
+  }
+  
+
+#content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 70px;
+    background-color: white;
+}
+
+#content p  {
+    font-size: 17px;
+    text-transform: uppercase;
+    letter-spacing: .07px;
+    color: #0e0e0e;
+    line-height: 13px;
+}
+
+#content h3{
+    color: rgb(63, 56, 56);
+    letter-spacing: 1.5px;
+}
+
+#content div {
+    position: relative;
+    cursor: pointer;
+}
+
+#content div div {
+    padding-left: 20px;
+    padding-right: 20px;
+    
+}
+
+.DDscrool {
+    display: flex;
+    overflow: scroll;
+    max-height: 500px;
+
+}
+
+/* Customize the scrollbar for the DDscrool container */
+.DDscrool::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Customize the scrollbar track */
+.DDscrool::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}
+
+/* Customize the scrollbar thumb */
+.DDscrool::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+/* Customize the scrollbar thumb on hover */
+.DDscrool::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+#content div a {
+    display: block;
+    text-decoration: none;
+    padding-bottom: 10px;
+    color: grey;
+}
+
+#content a:hover{
+    color: red;
+    text-decoration: underline;
+}
+
+
+
+#content div section {
+    background-color: whitesmoke;
+    padding: 15px;
+    position: absolute;
+    width: max-content;
+    min-width: 100%;
+    display: none;
+    z-index: 10;
+    margin-top: 47px;
+}
+
+#content div:hover section {
+    display: block;
+}
+
+#content div:hover section {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* first menu */
+
+
+
+/* second */
+
+#second {
+    margin-top: 33px;
+}
+
+#second img {
+    width: 100%;
+}
+
+/* third */
+
+#third {
+    width: 80%;
+    display: flex;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#third div img {
+    width: 80%;
+}
+
+#third p {
+    font-weight: bold;
+    font-family: montserrat, sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* fourth */
+
+#fourth {
+    width: 100%;
+    display: flex;
+
+}
+
+#fourth img:nth-child(1) {
+    width: 50%;
+}
+
+#fourth img:nth-child(2) {
+    width: 50%;
+}
+
+#FourH3 {
+    font-family: montserrat, sans-serif;
+    letter-spacing: 2px;
+    text-align: center;
+    font-size: x-large;
+}
+
+/* fifth */
+
+#fifth {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+#fifth img {
+    width: 100%;
+}
+
+#FifthH3 {
+    font-family: montserrat, sans-serif;
+    letter-spacing: 2.5px;
+    text-align: center;
+    font-size: x-large;
+}
+
+/* sixth */
+
+#sixth1 {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+
+}
+
+#sixth1 img:nth-child(1) {
+    width: 50%;
+}
+
+#sixth1 img:nth-child(2) {
+    width: 50%;
+}
+
+#sixth2 {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+
+}
+
+#sixth2 img:nth-child(1) {
+    width: 50%;
+}
+
+#sixth2 img:nth-child(2) {
+    width: 50%;
+}
+
+#sixh3 {
+    font-family: montserrat, sans-serif;
+    letter-spacing: 2.5px;
+    text-align: center;
+    font-size: x-large;
+}
+
+/* seventh */
+
+#sevenH3 {
+    font-family: montserrat, sans-serif;
+    letter-spacing: 2.5px;
+    text-align: center;
+    font-size: x-large;
+}
+
+#seventh {
+    display: flex;
+}
+
+#seventh img {
+    width: 100%;
+}
+
+/* eight */
+
+/* ninth */
+
+#ninth {
+    display: flex;
+}
+
+#ninth img {
+    width: 100%;
+}
+
+/* tenth */
+#tenth1 {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+
+}
+
+#tenth1 img:nth-child(1) {
+    width: 50%;
+}
+
+#tenth1 img:nth-child(2) {
+    width: 50%;
+}
+
+#tenth2 {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+}
+
+#tenth2 img:nth-child(1) {
+    width: 50%;
+}
+
+#tenth2 img:nth-child(2) {
+    width: 50%;
+}
+
+/* eleventh */
+
+#eleventh img {
+    width: 100%;
+}
+
+/* twelfth */
+
+#twelfth img {
+    width: 100%;
+}
+
+#twelfth {
+    margin-top: 15px;
+}
+
+/* back-to-top button */
+
+#back-to-topbtn img {
+    width: 30px;
+}
+
+#back-to-topbtn {
+    position: fixed;
+    bottom: 5%;
+    width: 75px;
+    right: 1%;
+    /* z-index: 99; */
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 10px black;
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
+    padding: 20px;
+    transition: background-color 0.3s ease-out;
+}
+
+#back-to-topbtn:hover {
+    background-color: #eee;
+}
+
+/* slider */
+
+#first {
+    width: 100%;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+    gap: 25px;
+    margin-left: 20px;
+}
+
+#first img {
+    width: 100%;
+    margin: auto;
+}
+
+#rightArrow7 {
+    border: none;
+    font-size: 50px;
+    position: absolute;
+    right: 1%;
+    margin-top: 200px;
+    box-shadow: 0px 0px 10px black;
+    background-color: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#leftArrow7 {
+    border: none;
+    font-size: 50px;
+    position: absolute;
+    left: 2%;
+    margin-top: 200px;
+    box-shadow: 0px 0px 10px black;
+    background-color: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#rightArrow7:hover,
+#leftArrow7:hover {
+    color: grey;
+}
+
+
+
