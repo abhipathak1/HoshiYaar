@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: montserrat, sans-serif;
+        }
+
+        .MainNav {
+            position: sticky;
+            top: 0;
+        }
+
+        /* firstNav Bar */
+
+        #nav1 {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background-color: rgb(238, 238, 238);
+            height: 25px;
+        }
+
+        #nav1 div a {
+            text-decoration: none;
+            color: rgba(0, 0, 0, .8);
+            margin-left: 15px;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        /* second nav bar */
+        #nav2 {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            background-color: rgb(255, 255, 255);
+        }
+
+        #nav2 div {
+            display: flex;
+            align-items: center;
+
+
+        }
+
+        #nav2 :first-child img {
+            width: 40%;
+        }
+
+        #nav2 div a {
+            text-decoration: none;
+            color: black;
+            margin-left: 40px;
+            letter-spacing: 1px;
+        }
+
+        #nav2 div img {
+            width: 23px;
+        }
+
+        #nav2 :nth-last-child(1) {
+            margin-left: 10px;
+        }
+
+        #nav2 div button {
+            background: none;
+            border: none;
+        }
+
+        #search {
+            width: 250px;
+            height: 40px;
+            background-color: rgb(234, 234, 234);
+            border-radius: 5px;
+            border: none;
+        }
+
+        /* login */
+
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            background: linear-gradient(to bottom, rgb(255, 254, 246), #fff4c5);
+        }
+
+        .box {
+            width: 400px;
+            height: 500px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-family: montserrat-bold, sans-serif;
+            margin: 16px 0 35px;
+            text-align: center;
+        }
+
+        #email,
+        #pass,
+        #nm {
+            width: 100%;
+            height: 29px;
+            padding: 5px 0;
+            font-size: 20px;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid #bcbcbc;
+            border-radius: 0;
+            background: none;
+            box-shadow: none;
+            display: block;
+            margin-bottom: 60px;
+            line-height: normal;
+        }
+
+        .show-pass {
+            margin-top: 2.5%;
+            width: 14px;
+            height: 10px;
+        }
+
+        .forgotPassword button {
+            padding: 18px 0;
+            font-family: montserrat, sans-serif;
+            font-size: 15px;
+            color: #42a2a2;
+            background: none;
+            border: none;
+            margin-left: 190px;
+        }
+
+        #login_password_submit {
+            width: 100%;
+            height: 50px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            letter-spacing: .5px;
+            background-color: gray;
+            font-size: 16px;
+            font-family: montserrat, sans-serif;
+            color: #fff;
+            text-transform: uppercase;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="MainNav">
+
+        <div id="nav1">
+            <div>
+                <a href="">Offer</a>
+                <a href="">Fanbook</a>
+                <a href="">📲Download App</a>
+                <a href="">TriBe Membership</a>
+            </div>
+            <div>
+                <a href="">Contact Us</a>
+                <a href="">Track order</a>
+            </div>
+        </div>
+
+        <!-- second nav bar -->
+
+        <div id="nav2">
+            <div>
+                <img id="Logo" src="https://images.bewakoof.com/web/ic-desktop-bwkf-trademark-logo.svg" alt="">
+
+                <a href="">MEN</a>
+                <a href="">WOMEN</a>
+
+            </div>
+            <div>
+                <input type="search" id="search" placeholder="🔍 Search by product, category or collection">
+                &nbsp&nbsp<p id="searchBtn">🔍</p>
+                <div>
+                    <img src="https://cdn-icons-png.flaticon.com/128/1077/1077035.png" alt="">
+                </div>
+                <div>
+                    <img src="https://cdn-icons-png.flaticon.com/128/694/694575.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- loginPart -->
+    <div id="container">
+        <div class="box">
+            <div>
+                <h2>Login Into Your Account</h2>
+            </div>
+            <div>
+                <form id="myForm">
+                    <input type="text" id="email" name="email" placeholder="Email">
+
+                    <div>
+                        <input type="password" id="pass" name="pass" placeholder="Password">
+
+                    </div>
+                    <div class="forgotPassword">
+                        <button type="button" id="forgot_password_link">Forgot Password?</button>
+                    </div>
+                    <div id="d1">
+                        <a href="home.html"><button id="login_password_submit" type="submit">Login</button></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+    let form = document.getElementById("myForm")
+    let user = JSON.parse(localStorage.getItem("users")) || []
+
+    form.onsubmit = (e) => {
+        e.preventDefault()
+        let email = form.email.value
+        let password = form.pass.value
+        if (user.some(us => us.email == email && us.password == password)) {
+            location = 'index.html'
+            alert("welcome")
+        }
+        else {
+            alert("Wrong Email oR Password")
+        }
+
+    }
+
+    let Logo = document.getElementById("Logo")
+    Logo.onclick = () => {
+        localStorage.removeItem("logged")
+        window.location.reload()
+        location = "index.html"
+    }
+
+</script>

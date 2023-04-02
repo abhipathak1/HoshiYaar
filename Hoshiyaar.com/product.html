@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        font-family: montserrat, sans-serif;
+    }
+
+    .MainNav {
+        position: sticky;
+        top: 0;
+    }
+
+    /* firstNav Bar */
+
+    #nav1 {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background-color: rgb(238, 238, 238);
+        height: 25px;
+    }
+
+    #nav1 div a {
+        text-decoration: none;
+        color: rgba(0, 0, 0, .8);
+        margin-left: 15px;
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    /* second nav bar */
+    #nav2 {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: rgb(255, 255, 255);
+    }
+
+    #nav2 div {
+        display: flex;
+        align-items: center;
+
+
+    }
+
+    #nav2 :first-child img {
+        width: 40%;
+    }
+
+    #nav2 div a {
+        text-decoration: none;
+        color: black;
+        margin-left: 40px;
+        letter-spacing: 1px;
+    }
+
+    #nav2 div img {
+        width: 23px;
+    }
+
+    #nav2 :nth-last-child(1) {
+        margin-left: 10px;
+    }
+
+    #nav2 div button {
+        background: none;
+        border: none;
+    }
+
+    #search {
+        width: 250px;
+        height: 40px;
+        background-color: rgb(234, 234, 234);
+        border-radius: 5px;
+        border: none;
+    }
+
+    /* appendPart */
+
+    #products {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px;
+        padding: 20px;
+    }
+
+    #products div {
+        background-color: #f2f2f2;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    #products img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    #products h4 {
+        margin: 0;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    #products p {
+        margin: 0;
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+
+    #products button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    #products button:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<body>
+    <div class="MainNav">
+
+        <div id="nav1">
+            <div>
+                <a href="">Offer</a>
+                <a href="">Fanbook</a>
+                <a href="">📲Download App</a>
+                <a href="">TriBe Membership</a>
+            </div>
+            <div>
+                <a href="">Contact Us</a>
+                <a href="">Track order</a>
+            </div>
+        </div>
+
+        <!-- second nav bar -->
+
+        <div id="nav2">
+            <div>
+                <img id="Logo" src="https://images.bewakoof.com/web/ic-desktop-bwkf-trademark-logo.svg" alt="">
+
+                <a href="">MEN</a>
+                <a href="">WOMEN</a>
+
+            </div>
+            <div>
+                <input type="search" id="search" placeholder="🔍 Search by product, category or collection">
+                &nbsp&nbsp<p style="cursor: pointer;" id="searchBtn">🔍</p>
+                <div>
+                    <img src="https://cdn-icons-png.flaticon.com/128/1077/1077035.png" alt="">
+                </div>
+                <div>
+                    <img id="CartRedirection" src="https://cdn-icons-png.flaticon.com/128/694/694575.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="products">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    let product = document.getElementById("products");
+    let apiUrl = 'https://64246ecb9e0a30d92b1bd43d.mockapi.io/products';
+
+    let carts = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Fetch data from the API
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            displayData(data);
+        })
+        .catch(error => {
+            console.log(error);
+        });
+
+    // Display data on the webpage
+    function displayData(data) {
+        product.innerHTML = "";
+
+        for (let i = 0; i < data.length; i++) {
+
+            let div = document.createElement("div");
+            let name = document.createElement("h4");
+            let price = document.createElement("p");
+            let category = document.createElement("h5");
+            let image = document.createElement("img");
+            let btn = document.createElement("button");
+            let rating = document.createElement("h5");
+
+            image.src = data[i].image;
+            name.textContent = data[i].title;
+            price.textContent = "Price:- ₹ " + data[i].price;
+            category.textContent = "Category:-" + data[i].Category;
+            rating.textContent = "Rating:- " + data[i].rating + " ⭐";
+            btn.innerText = "ADD TO CART";
+
+            // Add product to cart
+            btn.onclick = function () {
+                if (carts.includes(data[i].id)) {
+                    alert("Product Already in Cart");
+                } else {
+                    carts.push(data[i]);
+                    localStorage.setItem("cart", JSON.stringify(carts));
+                    alert("Product Added To Cart");
+                    btn.onclick = function () {
+                        alert("Product Already in Cart");
+                    };
+
+                }
+            };
+
+            // Disable button if product is already in cart
+            if (carts.includes(data[i].id)) {
+                btn.onclick = function () {
+                    alert("Product Already in Cart");
+                };
+            }
+
+            div.append(image, name, category, rating, price, btn);
+            product.append(div);
+        }
+    }
+
+    // Search functionality
+    let searchInput = document.getElementById("search");
+    let searchBtn = document.getElementById("searchBtn");
+
+    searchBtn.addEventListener("click", () => {
+        let searchValue = searchInput.value.toLowerCase().trim();
+        if (searchValue === "") {
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    displayData(data);
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+            return;
+        }
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                let filteredData = data.filter((e) => {
+                    return e.title.toLowerCase().includes(searchValue) || e.Category.toLowerCase().includes(searchValue);
+                });
+                displayData(filteredData);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    });
+
+
+    let CartRedirection = document.getElementById("CartRedirection")
+    CartRedirection.onclick = () => {
+        localStorage.removeItem("logged")
+        window.location.reload()
+        location = "cart.html"
+    }
+
+    let Logo = document.getElementById("Logo")
+    Logo.onclick = () => {
+        localStorage.removeItem("logged")
+        window.location.reload()
+        location = "index.html"
+    }
+
+
+</script>

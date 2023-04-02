@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+        }
+
+        .form {
+            display: flex;
+            max-width: 500px;
+            box-shadow: 0 0 12px 0px #00000040;
+            margin-top: 20px;
+            flex-direction: column;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        .form .card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .form .card div:nth-child(1) {
+            grid-column: span 2;
+        }
+
+        .form .card button {
+            margin-top: 20px;
+            height: 40px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            color: white;
+            background-color: #1e90ff;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .form .card button:hover {
+            background-color: #0077ff;
+        }
+
+        .form .card div {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .form .card input {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            color: #333;
+            transition: border-color 0.2s ease;
+        }
+
+        .form .card input:focus {
+            outline: none;
+            border-color: #1e90ff;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+
+
+        /* popup */
+
+
+
+        .popup {
+            width: 400px;
+            background: #fff;
+            border-radius: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.1);
+            text-align: center;
+            padding: 30px;
+            color: #333;
+            visibility: hidden;
+            opacity: 0;
+            transition: transform 0.4s, opacity 0.4s, top 0.4s;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .open_popup {
+            visibility: visible;
+            opacity: 1;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .popup img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .popup h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin: 0 0 20px;
+        }
+
+        .popup p {
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .popup button {
+            width: 100%;
+            padding: 10px 0;
+            background: #6fd649;
+            color: #fff;
+            border: 0;
+            outline: none;
+            font-size: 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.2s;
+        }
+
+        .popup button:hover {
+            background-color: #5cb23d;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form">
+        <div class="price"></div>
+        <form class="card">
+            <div>
+                Account Number
+                <input type="text" required minlength="12" maxlength="12" placeholder="000-000-000-000">
+            </div>
+            <div>
+                CVV
+                <input type="text" required placeholder="eg. 123">
+            </div>
+            <div>
+                Expiry
+                <input type="text" required placeholder="MM/YY">
+            </div>
+            <div>
+                OTP
+                <input type="number" id="otp" disabled placeholder="One Time Password">
+            </div>
+            <button id="sub" type="submit">Get Otp</button>
+            <button onclick="setTimeout(openPopup, 3000)">Submit</button>
+        </form>
+    </div>
+
+    <div class="main">
+        <div class="main">
+            <div class="popup">
+                <img src="https://cdn-icons-png.flaticon.com/128/5511/5511410.png">
+                <h2>Bravo!</h2>
+                <p>Thanks For Shopping🙏</p>
+                <p>Your Order Has Been Placed SuccessFullu😃</p>
+                <button type="button" onclick="closePopup()"><a href="index.html">Back To Homepage</a></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        let form = document.querySelector("form")
+        let otp = document.getElementById("otp")
+
+        const randomRange = (min, max) => Math.floor(Math.random() * (max - min) + min)
+        let sub = document.getElementById("sub")
+        let code = 0
+
+        form.onsubmit = e => {
+            e.preventDefault()
+            if (otp.disabled == false) {
+                if (otp.valueAsNumber == code) {
+                    alert("Otp Is Correct")
+                } else {
+                    alert("Wrong OTP")
+                }
+                return
+            }
+            otp.disabled = false
+            otp.required = true
+
+            code = randomRange(1000, 9999)
+            setTimeout(() => {
+                alert("Your otp is " + code + "!")
+            }, 2000)
+        }
+
+        let popup = document.querySelector(".popup");
+
+        function openPopup() {
+            popup.classList.add("open_popup");
+        }
+
+        function closePopup() {
+            popup.classList.remove("open_popup");
+        }
+
+
+        sub.addEventListener("click", function () {
+            closePopup();
+        });
+
+
+    </script>
+
+</html>
