@@ -16,7 +16,7 @@ Welcome to Hoshiyaar, an e-commerce website developed by [Your Name]! Hoshiyaar 
 
 ## Demo
 
-A live demo of Hoshiyaar can be accessed [here](#) [https://hoshiyaar.netlify.app/].
+A live demo of Hoshiyaar can be accessed [here](https://hoshiyaar.netlify.app/){:target="_blank"}.
 
 ## Getting Started
 
